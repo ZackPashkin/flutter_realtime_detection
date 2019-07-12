@@ -106,6 +106,25 @@ class BndBox extends StatelessWidget {
                     cy=y+y1
                     a.append([cx,cy])
                     print(len(a))
+                    
+                    
+                    
+                   # compute the (x, y)-coordinates of the bounding box
+				# for the object
+				box = detections[0, 0, i, 3:7] * np.array([W, H, W, H])
+				(startX, startY, endX, endY) = box.astype("int")
+ 
+				# construct a dlib rectangle object from the bounding
+				# box coordinates and then start the dlib correlation
+				# tracker
+				tracker = dlib.correlation_tracker()
+				rect = dlib.rectangle(startX, startY, endX, endY)
+				tracker.start_track(rgb, rect)
+ 
+				# add the tracker to our list of trackers so we can
+				# utilize it during skip frames
+				trackers.append(tracker) 
+                    
                     */
 
     List<Widget> _renderKeypoints() {
