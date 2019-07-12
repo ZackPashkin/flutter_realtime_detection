@@ -124,6 +124,10 @@ class BndBox extends StatelessWidget {
 				# add the tracker to our list of trackers so we can
 				# utilize it during skip frames
 				trackers.append(tracker) 
+				
+					# construct a tuple of information we will be displaying on the frame
+	                       info = [("Students", number)]
+		
                     
                     */
 
