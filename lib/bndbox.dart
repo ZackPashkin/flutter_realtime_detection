@@ -55,6 +55,7 @@ class BndBox extends StatelessWidget {
                 color: Color.fromRGBO(37, 213, 253, 1.0),
                 width: 3.0,
               ),
+              
             ),
             child: Text(
               "${re["detectedClass"]} ${(re["confidenceInClass"] * 100).toStringAsFixed(0)}%",
@@ -89,6 +90,23 @@ class BndBox extends StatelessWidget {
         );
       }).toList();
     }
+    /*
+     List<Widget> _renderNumberOfBoxes() {
+      var lists = <Widget>[];
+      results.forEach((re) {
+        a=[]
+        
+        var list = re["keypoints"].values.map<Widget>((k) {
+          var _x = k["x"];
+          var _y = k["y"];
+          var scaleW, scaleH, x,y; 
+                    x1=w/2
+                    y1=h/2
+                    cx=x+x1
+                    cy=y+y1
+                    a.append([cx,cy])
+                    print(len(a))
+                    */
 
     List<Widget> _renderKeypoints() {
       var lists = <Widget>[];
